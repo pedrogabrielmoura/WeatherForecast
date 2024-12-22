@@ -44,7 +44,7 @@ def data_loader(n_years: int = EXTRACTION_TIMEFRAME, lat: float = LATITUDE,
 
     # Fetch daily weather data for the defined location and date range
     data = Daily(location, start_date, end_date)
-    data = data.convert(units.imperial)
+    data = data.convert(units.scientific)
     data = data.fetch()
 
     # Save the data to CSV at the specified path
