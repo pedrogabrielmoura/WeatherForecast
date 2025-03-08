@@ -126,31 +126,32 @@ def ts_quick_insights(serie: pd.Series, time_index: pd.Series, figsize=(15, 5)):
     plt.tight_layout()
     plt.show()
 
-def plot_acf_pacf(serie: pd.Series, type: str = 'normal'):
+def plot_acf_pacf(serie: pd.Series, focus: str = 'normal'):
     """
     Plot both the Autocorrelation Function (ACF) and Partial Autocorrelation Function (PACF) for a given time series.
     
     Args:
         serie (pd.Series): The time series data.
-        type (str): Type of ACF/PACF plot. Can be 'normal', 'seasonal', or 'both'. Default is 'normal'.
+        focus (str): Type of ACF/PACF plot. Can be 'normal', 'seasonal', or 'both'. Default is 'normal'.
         
     Example:
         plot_acf_pacf(time_series_data)
     """
     # Initialize the figure
-    fig = plt.figure(figsize=(20, 10))
 
-    if type == 'normal':
-        ax1 = plt.subplot2grid((2, 2), (0, 0))
-        ax2 = plt.subplot2grid((2, 2), (0, 1))
+    if focus == 'normal':
+        fig = plt.figure(figsize=(15, 6))
+        ax1 = plt.subplot2grid((2, 1), (0, 0))
+        ax2 = plt.subplot2grid((2, 1), (1, 0))
         plot_acf(serie, lags=32, ax=ax1)
         ax1.set_title('Autocorrelation Month')
         plot_pacf(serie, lags=32, ax=ax2)
         ax2.set_title('Partial Autocorrelation Month')
 
-    elif type == 'seasonal':
-        ax3 = plt.subplot2grid((1, 2), (1, 0), colspan=2)
-        ax4 = plt.subplot2grid((1, 2), (2, 0), colspan=2)
+    elif focus == 'seasonal':
+        fig = plt.figure(figsize=(15, 6))
+        ax3 = plt.subplot2grid((2, 1), (0, 0))
+        ax4 = plt.subplot2grid((2, 1), (1, 0))
         plot_acf(serie, lags=400, ax=ax3)
         ax3.set_title('Autocorrelation Yearly')
         ax3.set_xlim(300, 400)
@@ -159,6 +160,7 @@ def plot_acf_pacf(serie: pd.Series, type: str = 'normal'):
         ax4.set_xlim(300, 400)
 
     else:
+        fig = plt.figure(figsize=(20, 10))
         ax1 = plt.subplot2grid((3, 2), (0, 0))
         ax2 = plt.subplot2grid((3, 2), (0, 1))
         ax3 = plt.subplot2grid((3, 2), (1, 0), colspan=2)
