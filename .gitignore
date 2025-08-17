@@ -1,0 +1,14 @@
+# Ignore Python virtual environment
+venv/
+
+# Ignore data files
+data/
+
+# Ignore build folders
+__pycache__/
+build/
+dist/
+
+# Ignore IDE configs
+.idea/
+.vscode/
