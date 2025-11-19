@@ -1,0 +1,15 @@
+{
+  "event": "security_override",
+  "timestamp": "2025-11-19T20:03:26.024137",
+  "user": "pedro.moura@incognia.com",
+  "branch": "eda",
+  "files": [
+    "s",
+    "d",
+    "f"
+  ],
+  "detectors": [
+    "SOPS"
+  ],
+  "secrets_found": 18
+}
