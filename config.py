@@ -2,7 +2,11 @@ from pathlib import Path
 
 PROJ_PATH_LIST = ['C:/Users/PedroMoura/Documents/GitHub/WeatherForecast', 
 <<<<<<< HEAD
+<<<<<<< HEAD
                   'C:/Users/pedro/Documents/GitHub/WeatherForecast']
+=======
+                  '/home/pedro.moura/Pessoal/WeatherForecast']
+>>>>>>> main
 =======
                   '/home/pedro.moura/Pessoal/WeatherForecast']
 >>>>>>> main

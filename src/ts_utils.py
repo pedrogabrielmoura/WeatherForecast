@@ -55,11 +55,7 @@ def ts_plot(serie: pd.Series, time_index: pd.Series, figsize=(15, 3)):
         ts_plot(time_series_data, time_index)
     """
     # Creating a color palette for each year
-<<<<<<< HEAD
     color_palette = {year: sns.color_palette("tab20", time_index.dt.year.nunique())[i] for i, year in enumerate(time_index.dt.year.unique())}
-=======
-    color_palette = {year: sns.color_palette("Paired")[i] for i, year in enumerate(time_index.dt.year.unique())}
->>>>>>> main
 
     # Plot
     plt.figure(figsize=figsize)
