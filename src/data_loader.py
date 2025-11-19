@@ -49,7 +49,7 @@ def data_loader(n_years: int = EXTRACTION_TIMEFRAME, lat: float = LATITUDE,
     data = data.fetch()
 
     # Save the data to CSV at the specified path
-    save_path.mkdir(parents=True, exist_ok=True)
-    data.to_csv(save_path / 'weather_raw_data.csv')
-        
+    data.reset_index(inplace=True)
+    data.to_parquet(save_path)
+
     return

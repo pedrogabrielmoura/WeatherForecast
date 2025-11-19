@@ -1,2 +1,15 @@
-meteostat==1.6.8
-python-dateutil~=2.9.0.post0
+numpy==1.23.5
+pandas
+missingno 
+matplotlib
+seaborn
+scipy
+statsmodels
+tqdm
+meteostat
+tqdm 
+meteostat
+pmdarima
+pyarrow
+scikit-posthocs
+jinja2
