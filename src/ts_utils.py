@@ -55,7 +55,11 @@ def ts_plot(serie: pd.Series, time_index: pd.Series, figsize=(15, 3)):
         ts_plot(time_series_data, time_index)
     """
     # Creating a color palette for each year
+<<<<<<< HEAD
     color_palette = {year: sns.color_palette("tab20", time_index.dt.year.nunique())[i] for i, year in enumerate(time_index.dt.year.unique())}
+=======
+    color_palette = {year: sns.color_palette("Paired")[i] for i, year in enumerate(time_index.dt.year.unique())}
+>>>>>>> main
 
     # Plot
     plt.figure(figsize=figsize)
@@ -63,7 +67,7 @@ def ts_plot(serie: pd.Series, time_index: pd.Series, figsize=(15, 3)):
     sns.lineplot(x=time_index, y=serie, hue=time_index.dt.year, palette=color_palette, legend=False)
     
     # Adjust x-ticks for better date visibility
-    date_list = pd.date_range(start=time_index.min(), end=time_index.max(), freq='QS')
+    date_list = pd.date_range(start=time_index.min(), end=time_index.max(), freq='2QS')
     plt.xticks(date_list, date_list.strftime('%b\n%Y'))
 
     # Additional layout settings
@@ -104,7 +108,7 @@ def ts_quick_insights(serie: pd.Series, time_index: pd.Series, figsize=(15, 5)):
     
     ax[0].set_xlim([-50, len(serie) + 50]) 
     ax[0].set_xticks([i for i, d in enumerate(time_index) if d in pd.date_range(start=time_index.min(), end=time_index.max(), freq='2QS')])
-    ax[0].set_xticklabels(pd.date_range(start=time_index.min(), end=time_index.max(), freq='2QS').strftime('%b\n%Y'))
+    ax[0].set_xticklabels(pd.date_range(start=time_index.min(), end=time_index.max(), freq='2QS').strftime('%b\n%y'))
     ax[0].grid(linestyle='--')
     ax[0].set_title(f"Trend Analysis with Linear Regression\nSlope: {np.degrees(np.arctan(slope)):.1f}°")
 

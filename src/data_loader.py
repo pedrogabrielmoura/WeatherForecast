@@ -6,14 +6,19 @@ Meteostat for a given location and timeframe. The retrieved data can be saved
 to a file in a specified format and location.
 """
 
+from pathlib import Path
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 from meteostat import Point, Daily, units
-from config import EXTRACTION_TIMEFRAME, LATITUDE, LONGITUDE
+from config import EXTRACTION_TIMEFRAME, LATITUDE, LONGITUDE, DATA_PATH_RAW
 
 
 def data_loader(n_years: int = EXTRACTION_TIMEFRAME, lat: float = LATITUDE,
+<<<<<<< HEAD
                 long: float = LONGITUDE, save_path: str = '../data/raw/weather_raw_data.parquet') -> None:
+=======
+                long: float = LONGITUDE, save_path: str = Path(DATA_PATH_RAW)) -> None:
+>>>>>>> main
     """
     Downloads and saves daily historical weather data for a specified location and timeframe.
 
@@ -48,7 +53,13 @@ def data_loader(n_years: int = EXTRACTION_TIMEFRAME, lat: float = LATITUDE,
     data = data.fetch()
 
     # Save the data to CSV at the specified path
+<<<<<<< HEAD
     data.reset_index(inplace=True)
     data.to_parquet(save_path)
 
+=======
+    save_path.mkdir(parents=True, exist_ok=True)
+    data.to_csv(save_path / 'weather_raw_data.csv')
+        
+>>>>>>> main
     return
