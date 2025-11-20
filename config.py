@@ -1,7 +1,8 @@
 from pathlib import Path
 
 PROJ_PATH_LIST = ['C:/Users/PedroMoura/Documents/GitHub/WeatherForecast', 
-                  'C:/Users/pedro/Documents/GitHub/WeatherForecast']
+                  'C:/Users/pedro/Documents/GitHub/WeatherForecast', 
+                  '/home/pedro.moura/Pessoal/WeatherForecast']
 
 for path in PROJ_PATH_LIST:
     if Path(path).exists():

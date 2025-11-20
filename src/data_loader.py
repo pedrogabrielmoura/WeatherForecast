@@ -13,7 +13,7 @@ from config import EXTRACTION_TIMEFRAME, LATITUDE, LONGITUDE
 
 
 def data_loader(n_years: int = EXTRACTION_TIMEFRAME, lat: float = LATITUDE,
-                long: float = LONGITUDE, save_path: str = '../data/raw/weather_raw_data.parquet') -> None:
+                long: float = LONGITUDE, save_path: str = '../../data/raw/weather_raw_data.parquet') -> None:
     """
     Downloads and saves daily historical weather data for a specified location and timeframe.
 
